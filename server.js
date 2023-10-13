@@ -16,6 +16,9 @@ const PORT = process.env.PORT || 4000
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.get('/home', (req, res) => {
+    res.status(200).json('Welcome, your app is working well');
+  })
 app.post("/create", async(req,res)=>{
     try {
         console.log('data = ',req.body)
